@@ -218,11 +218,11 @@ margin-bottom: 24px;
 .p2{
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 300;
+font-weight: 500;
 font-size: 22px;
 line-height: 34px;
 text-align: center;
-color: #535353;
+color: #000000;
 margin-bottom: 60px;
 }
 .slick-prev {
@@ -239,9 +239,9 @@ margin-bottom: 60px;
 .p3{
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 300;
-font-size: 22px;
-line-height: 30px;
+font-weight: 800;
+font-size: 24px;
+line-height: 40px;
 text-transform: lowercase;
 color: #535353;
 padding-top: 50px;
@@ -259,7 +259,7 @@ margin-left: -33px;
 .p4{
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 300;
+font-weight: 500;
 font-size: 18px;
 line-height: 24px;
 color: #535353;
