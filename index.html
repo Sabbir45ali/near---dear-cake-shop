@@ -14,7 +14,7 @@
     </div>
     <div class="container" id="main">
         <div class="sign-up">
-            <form action="">
+            <form action="" method="post" id="singUpForm" name="singUpForm">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="" class="social"><img src="./image/facebook.png" alt=""></a>
@@ -22,16 +22,14 @@
                     <a href="" class="social"><img src="./image/whatsapp.png" alt=""></a>
                 </div>
                 <p> or use your email for registration </p>
-                <input type="text" name="txt" placeholder="Name" required="">
+                <input type="text" name="name" placeholder="Name" required="">
                 <input type="email" name="email" placeholder="EMAIL" required="">
                 <input type="password" name="pswd" placeholder="password" required="">
-                <button>Sign up</button>
+                <button type="submit">Sign up</button>
             </form>
         </div>
         <div class="sign-in">
-            <form
-                action="https://script.google.com/macros/s/AKfycbxO0AhvpK18nymcM0-7cy--VK-tD4HF9NAb3Hds-QFeIZ6KqktPbYlcnlaAXZTnuOJJ8Q/exec"
-                method="post" id="signInForm" name="signInForm">
+            <form method="post" id="signInForm" name="signInForm">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="" class="social"><img src="./image/facebook.png" alt=""></a>
@@ -42,7 +40,7 @@
                 <input type="email" name="email" placeholder="EMAIL" required="">
                 <input type="password" name="pswd" placeholder="password" required="">
                 <a href="#" style="color: blue;">Forget your password?</a>
-                <button>Sign in</button>
+                <a href="/"><button>Sign in</button></a>
             </form>
         </div>
         <div class="overlay-container">
@@ -62,17 +60,19 @@
 
     </div>
     <script type="text/javascript">
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxO0AhvpK18nymcM0-7cy--VK-tD4HF9NAb3Hds-QFeIZ6KqktPbYlcnlaAXZTnuOJJ8Q/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwNo3MmG1t3EaOmcJMxbhRr36iMZibx_le4CWSPvF1OHtVXHIiT1Oo_CvA4M6pS8If0/exec'
 
-        const form = document.forms['signInForm']
+        const form = document.forms['singUpForm']
 
         form.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault();
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert("Thank you! your form is submitted successfully."))
-                .then(() => { window.location.reload(); })
-                .catch(error => console.error('Error!', error.message))
-        })
+                .then(response => {
+                    alert("Thank you! your form is submitted successfully.");
+                    window.location.href = 'landing.html';
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
 
         const signUpButton = document.getElementById('sign-Up');
         const signInButton = document.getElementById('sign-In');
@@ -84,12 +84,6 @@
 
         signInButton.addEventListener('click', () => {
             main.classList.remove("right-panel-active")
-        });
-        const signInForm = document.getElementById('signInForm');
-        signInForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            //Some function to validate the form will added later
-            window.location.href = 'landing.html';
         });
 
 
