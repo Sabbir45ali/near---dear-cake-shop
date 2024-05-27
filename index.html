@@ -14,7 +14,7 @@
     </div>
     <div class="container" id="main">
         <div class="sign-up">
-            <form action="#">
+            <form action="">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="" class="social"><img src="./image/facebook.png" alt=""></a>
@@ -29,7 +29,9 @@
             </form>
         </div>
         <div class="sign-in">
-            <form action="#" id="signInForm" name="signInForm">
+            <form
+                action="https://script.google.com/macros/s/AKfycbxO0AhvpK18nymcM0-7cy--VK-tD4HF9NAb3Hds-QFeIZ6KqktPbYlcnlaAXZTnuOJJ8Q/exec"
+                method="post" id="signInForm" name="signInForm">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="" class="social"><img src="./image/facebook.png" alt=""></a>
@@ -48,7 +50,7 @@
                 <div class="overlay-left">
                     <h1>welcome back!</h1>
                     <p>to keep connected with us please login with your personal info</p>
-                    <button id="sign-In">Sing in</button>
+                    <button id="sign-In">Sign in</button>
                 </div>
                 <div class="overlay-right">
                     <h1>Hello, Friend</h1>
@@ -60,18 +62,18 @@
 
     </div>
     <script type="text/javascript">
-        // const scriptURL = 'https://script.google.com/macros/s/AKfycbzvLs1i_LNzYPIPsriysaaTc1PHjObMx65bd6GecJMUGG6a0InB9qwgj4FL58AWd78BRQ/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxO0AhvpK18nymcM0-7cy--VK-tD4HF9NAb3Hds-QFeIZ6KqktPbYlcnlaAXZTnuOJJ8Q/exec'
 
-        // const form = document.forms['signInForm']
+        const form = document.forms['signInForm']
 
-        // form.addEventListener('submit', e => {
-        //     e.preventDefault()
-        //     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        //         .then(response => alert("Thank you! your form is submitted successfully."))
-        //         .then(() => { window.location.reload(); })
-        //         .catch(error => console.error('Error!', error.message))
-        // })
-        
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thank you! your form is submitted successfully."))
+                .then(() => { window.location.reload(); })
+                .catch(error => console.error('Error!', error.message))
+        })
+
         const signUpButton = document.getElementById('sign-Up');
         const signInButton = document.getElementById('sign-In');
         const main = document.getElementById('main');
